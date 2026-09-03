@@ -2,7 +2,7 @@ Package: com.yellowcat98.wifimodule
 Name: WiFiModule
 Depends: com.opa334.ccsupport
 Version: 1.0.0
-Architecture: iphoneos-arm
+Architecture: iphoneos-arm64
 Description: Bringing the WiFi module to iOS 18.0-18.0.1.
 Maintainer: YellowCat98
 Author: YellowCat98
