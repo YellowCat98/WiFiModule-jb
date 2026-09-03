@@ -27,9 +27,11 @@ jobs:
       - name: Prepare Theos
         uses: Randomblock1/theos-action@v1.5
 
-      - name: Build package
+      - name: Prepare & Build package
         run: |
           rm -f packages/*
+          chmod 755 layout/DEBIAN
+          chmod 755 layout/DEBIAN/postinst
           make package FINALPACKAGE=1
 
       - name: Upload package
