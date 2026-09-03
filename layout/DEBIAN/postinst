@@ -1,0 +1,19 @@
+#!/bin/sh
+# https://theapplewiki.com/wiki/Dev:Packaging
+finish() {
+	f="$1"
+
+	# No control fd: bail out
+	[ -z "$f" ] || [ -z "$CYDIA" ] && return
+	read -r fd ver <<EOT
+$CYDIA
+EOT
+
+	# Cydia control fd version < 1: bail out
+	[ "$ver" -ge 1 ] || return
+
+	echo "finish:${f}" >&$fd
+}
+
+finish restart
+exit 0
