@@ -26,18 +26,12 @@ void setWifiEnabled(BOOL enabled) {
     return [UIImage systemImageNamed:@"wifi"];
 }
 
-
-// Current state of your module
 - (BOOL)isSelected {
     return wifiEnabled();
 }
 
 - (UIColor*)selectedColor {
-    UIColor* color = [UIColor systemBlueColor];
-
-    NSLog(@"Color: %@", color);
-
-    return color;
+    return [UIColor systemBlueColor];
 }
 
 - (void)setSelected:(BOOL)selected {
