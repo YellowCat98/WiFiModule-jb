@@ -6,10 +6,7 @@ on: [push]
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v6
@@ -38,5 +35,5 @@ jobs:
       - name: Upload package
         uses: actions/upload-artifact@v7
         with:
-          name: "Package built by ${{ matrix.os }}"
+          name: Build Output
           path: ${{ github.workspace }}/packages/*.deb
